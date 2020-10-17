@@ -1,0 +1,19 @@
+﻿@model IEnumerable<InternTest.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+@foreach (var item in Model)
+{
+    <div>
+        <span>
+            @item.Name
+        </span>
+        <span>
+            @item.Office
+        </span>
+    </div>
+}
+@for(int i = 0; i < 6; i++)
+{
+    <span>@i</span>
+}
