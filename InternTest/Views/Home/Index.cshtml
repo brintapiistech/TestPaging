@@ -1,19 +1,53 @@
-﻿@model IEnumerable<InternTest.Models.Product>
+﻿@model IEnumerable<InternTest.Models.Employee>
 @{
     ViewBag.Title = "Home Page";
+    //Layout = null;
+
 }
-@foreach (var item in Model)
-{
-    <div>
-        <span>
-            @item.Name
-        </span>
-        <span>
-            @item.Office
-        </span>
+<br />
+<table class="table table-striped table-condensed" id="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Office</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Office</td>
+                <td>@item.Position</td>
+                <td>@item.Salary</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-md-12">
+        @{
+            Double page = ViewBag.Totalpage;
+            for (int i = 1; i <= page; i++)
+            {
+                <ul class="pagination">
+                    <li>
+                        @*<a>@i  </a>*@
+                        @Html.ActionLink(i.ToString(), "Index", new { id = i })
+                        @*<a class="btn btn-primary " onclick="pageid('@Url.Action("index","Home", new { id=i })')">@i</a>*@
+                    </li>
+                </ul>
+
+            }
+
+        }
+
     </div>
-}
-@for(int i = 0; i < 6; i++)
-{
-    <span>@i</span>
-}
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+} 

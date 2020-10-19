@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Bigdata">
+  <DataContextMoniker Name="/BigdataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="988504ee-6772-4889-bfa9-b51239c01308" absoluteBounds="3.875, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BigdataDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03d15245-0f27-496f-a590-a0ed67e6f1f1" absoluteBounds="3.89, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
