@@ -1,0 +1,35 @@
+﻿
+@model IEnumerable<InternTest.Models.Product>
+@{
+    ViewBag.Title = "Page Load";
+    Layout = null;
+
+}
+<br />
+<div id="testPage1">
+    <table class="table table-striped table-condensed" id="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Office</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Office</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+

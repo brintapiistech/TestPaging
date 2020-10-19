@@ -4,8 +4,8 @@ function pageid(url) {
         type: 'GET',
         url: url,
         success: function (res) {
-            $("#table").html(res);
-            alert("ok");
+            console.log(res);
+            $("#testPage").html(res);
         }
     })
 

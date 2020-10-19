@@ -10,13 +10,13 @@ namespace InternTest.Controllers
 {
     public class HomeController : Controller
     {
-        //ProductClassDataContext productClassDataContext = new ProductClassDataContext();
-        BigdataDataContext Emploeedatacontext = new BigdataDataContext();
-        IEnumerable <Employee> GetAllProducts(int pageNo)
+        ProductClassDataContext productClassDataContext = new ProductClassDataContext();
+       // BigdataDataContext Emploeedatacontext = new BigdataDataContext();
+        IEnumerable <Product> GetAllProducts(int pageNo)
         {
             //var products = from x in productClassDataContext.Products select x;
             //var countProduct = products.Count();
-            var employees = from y in Emploeedatacontext.Employees select y;
+            var employees = from y in productClassDataContext.Products select y;
             var Countlemployee = employees.Count();
             //var numberOfData = fetchedDataCount > 1000 ? Convert.ToInt32((fetchedDataCount / 510)) : 25;
             //int numberOfProduct = 0;
@@ -31,7 +31,7 @@ namespace InternTest.Controllers
             //}
             //var index = emp.Skip((pageNo - 1) * numberOfData).Take(numberOfData);
 
-            var n = Countlemployee > 1000 ? numberofemployee = 50 : 20;
+            var n = Countlemployee > 1000 ? numberofemployee = 50 : 1;
             var index = employees.Skip((pageNo - 1) * n).Take(n);
             ViewBag.Totalpage = Math.Ceiling(Countlemployee / Convert.ToSingle(n));
 
@@ -39,6 +39,11 @@ namespace InternTest.Controllers
 
         }
         public ActionResult Index(int id = 1)
+        {
+            var getProduct = GetAllProducts(id);
+            return View(getProduct);
+        }
+        public ActionResult IndexLite(int id = 1)
         {
             var getProduct = GetAllProducts(id);
             return View(getProduct);

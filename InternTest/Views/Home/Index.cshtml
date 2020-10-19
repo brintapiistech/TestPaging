@@ -1,32 +1,31 @@
-﻿@model IEnumerable<InternTest.Models.Employee>
+﻿@model IEnumerable<InternTest.Models.Product>
 @{
     ViewBag.Title = "Home Page";
     //Layout = null;
 
 }
 <br />
-<table class="table table-striped table-condensed" id="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Office</th>
-            <th>Position</th>
-            <th>Salary</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div id="testPage">
+    <table class="table table-striped table-condensed" id="table">
+        <thead>
             <tr>
-                <td>@item.Name</td>
-                <td>@item.Office</td>
-                <td>@item.Position</td>
-                <td>@item.Salary</td>
+                <th>Name</th>
+                <th>Office</th>
             </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Office</td>
+                </tr>
 
-        }
-    </tbody>
-</table>
+            }
+        </tbody>
+    </table>
+</div>
+
 <div class="row">
     <div class="col-md-12">
         @{
@@ -36,8 +35,8 @@
                 <ul class="pagination">
                     <li>
                         @*<a>@i  </a>*@
-                        @Html.ActionLink(i.ToString(), "Index", new { id = i })
-                        @*<a class="btn btn-primary " onclick="pageid('@Url.Action("index","Home", new { id=i })')">@i</a>*@
+                        @*@Html.ActionLink(i.ToString(), "Index", new { id = i })*@
+                        <a class="btn btn-primary " onclick="pageid('@Url.Action("IndexLite","Home", new { id = i })')">@i</a>
                     </li>
                 </ul>
 
